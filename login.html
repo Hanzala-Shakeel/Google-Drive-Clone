@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="googleSignInBtn">Google Sign In</button>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="firebase-init.js"></script>
+    <script>
+      const auth = firebase.auth();
+      window.addEventListener("load", () => {
+        auth.onAuthStateChanged((user) => {
+          if (user) {
+            window.location.href = "index.html";
+          } else {
+            console.log("user is not login");
+          }
+        });
+      });
+
+      const googleSignInBtn = document.getElementById("googleSignInBtn");
+
+      googleSignInBtn.addEventListener("click", () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then((result) => {
+            // Successful login
+            const user = result.user;
+            window.location.href = "index.html";
+          })
+          .catch((error) => {
+            // Handle errors
+            console.error(error);
+          });
+      });
+    </script>
+  </body>
+</html>

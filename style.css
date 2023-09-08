@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #444444;
+}
+html {
+  position: relative;
+}
+body{
+  width: 100%;
+  height: 100vh;
+}
+/* =====================================Header======================================== */
+.header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3vw;
+  margin-top: 15px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.logo p {
+  font-size: 25px;
+  font-weight: 400;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 30vw;
+  /* border-radius: 50px; */
+  border-radius: 5px;
+  overflow: hidden;
+  /* background-color: #edf2fc; */
+  /* background-color: #dedede; */
+  background-color: #e6e6e6;
+  /* outline: #4d90fe solid 1px */
+  /* box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3),
+    0 1px 3px 1px rgba(65, 69, 73, 0.15); */
+}
+.search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  /* background-color: #edf2fc; */
+  /* background-color: #dedede; */
+  background-color: #e6e6e6;
+}
+.search input::placeholder {
+  font-size: 1vw;
+}
+.search img {
+  width: 23px;
+  margin: 0 11px;
+}
+.icons-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.icons-div img {
+  width: 35px;
+}
+.icons-div .user-image {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* =====================================Header 2======================================== */
+
+.header2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4vw 3vw;
+}
+.header2 .section1 {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.header2 .section1 button {
+  border: none;
+  width: 110px;
+  height: 60px;
+  font-size: 18px;
+  border-radius: 15px;
+  box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3),
+    0 1px 3px 1px rgba(65, 69, 73, 0.15);
+  cursor: pointer;
+}
+
+.header2 .section1 input {
+  position: absolute;
+  width: 6%;
+  height: 13%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.header2 .section1 p {
+  font-size: 25px;
+}
+
+.header2 .section1 p i {
+  font-size: 18px;
+  /* margin-left: 10px; */
+}
+.header2 .section2 {
+  display: flex;
+  gap: 30px;
+}
+.header2 img {
+  width: 35px;
+}
+
+/* ===================================== files======================================= */
+
+.files-parent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.files {
+  width: 76vw;
+  /* height: 200px; */
+  /* border: 1px solid grey; */
+}
+.file-item {
+  width: 100%;
+  display: flex;
+  /* padding: 1vw 1.5vw; */
+  padding: 1vw 0;
+  border-bottom: 1px solid grey;
+  align-items: center;
+}
+.file-name {
+  width: 47%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.file-name img {
+  width: 25px;
+}
+.file-name p i {
+  font-size: 18px;
+  margin-left: 10px;
+}
+.file-details {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+}
+.file-actions {
+  display: flex;
+  gap: 15px;
+}
+.file-actions i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ===================================== user======================================= */
+
+.user-info {
+  position: absolute;
+  right: 1vw;
+  top: 8vh;
+  width: 23vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* margin-left: 50px; */
+  border-radius: 35px;
+  gap: 30px;
+  padding: 1.2vw 0;
+  background-color: rgb(229 234 245);
+  box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3),
+    0 1px 3px 1px rgba(65, 69, 73, 0.15);
+  display: none;
+}
+.user-info img {
+  width: 80px;
+  border-radius: 50%;
+}
+.user-info .email i {
+  position: absolute;
+  right: 2vw;
+  cursor: pointer;
+  font-size: 20px;
+}
+.user-info .hi-user {
+  font-size: 25px;
+}
+.user-info button {
+  border: none;
+  font-size: 1vw;
+  padding: 0.6vw 0.6vw;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgb(229 234 245);
+}
+.user-info button:hover {
+  background-color: rgb(199 217 255);
+}
+
+.user-info button i {
+  margin-right: 10px;
+}
+.hide-show {
+  display: flex;
+}
+
+/* ===================================== upload======================================= */
+
+.upload {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.upload .filename {
+  width: 35vw;
+  height: 300px;
+  align-items: center;
+  background-color: #edf2fc;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+.upload .filename h3 {
+  font-size: 22px;
+}
+
+.upload .filename p{
+  margin: 15px 0;
+}
+.upload .filename button {
+  background-color: #f39c12;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
