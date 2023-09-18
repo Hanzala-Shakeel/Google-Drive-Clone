@@ -1,34 +1,7 @@
-function showAndHideUserBox() {
-  let userBox = document.querySelector(".user-info");
-  userBox.classList.toggle("hide-show")
-}
-
-function hideUserBox() {
-  let userBox = document.querySelector(".user-info");
-  userBox.classList.toggle("hide-show")
-}
 let input = document.querySelector(".section1 input");
 let files = document.querySelector(".files");
 let fileNames = document.querySelector(".file-names");
 let upload_box = document.querySelector(".upload");
-
-// input.addEventListener("change", function () {
-//   upload_box.style.display = "flex";
-//   document.body.style.overflow = "hidden";
-
-//   // Clear any previously displayed file names
-//   fileNames.innerHTML = '';
-
-//   if (input.files.length > 0) {
-//     // Iterate through all selected files and display their names
-//     for (let i = 0; i < input.files.length; i++) {
-//       const fileName = input.files[i].name;
-//       const fileNameElement = document.createElement('p');
-//       fileNameElement.textContent = fileName;
-//       fileNames.appendChild(fileNameElement);
-//     }
-//   }
-// });
 
 // Get a reference to the storage service
 let storage = firebase.storage();
@@ -78,12 +51,12 @@ filesCollection.onSnapshot(function (snapshot) {
 
 
           let fileItem = document.createElement('div');
-          let showFileName = document.createElement("div");
+          let fileNameContainer = document.createElement("div");
           let fileDetails = document.createElement("div");
           let fileIcon = document.createElement("img");
           let fileNameElement = document.createElement("p");
           let fileOwnerElement = document.createElement("p");
-          let fileLastModifiedElement  = document.createElement("p");
+          let fileLastModifiedElement = document.createElement("p");
           let fileSizeElement = document.createElement("p");
           let fileActions = document.createElement("div");
           let deleteIcon = document.createElement("i");
@@ -93,7 +66,7 @@ filesCollection.onSnapshot(function (snapshot) {
 
           fileItem.setAttribute("class", "file-item");
           fileItem.setAttribute("id", fileID);
-          showFileName.setAttribute("class", "file-name");
+          fileNameContainer.setAttribute("class", "file-name");
           fileDetails.setAttribute("class", "file-details");
           fileIcon.setAttribute("src", "assets/file.png");
           fileActions.setAttribute("class", "file-actions");
@@ -109,15 +82,15 @@ filesCollection.onSnapshot(function (snapshot) {
           fileSizeElement.textContent = formatBytes(fileSize);
 
 
-          showFileName.appendChild(fileIcon);
-          showFileName.appendChild(fileNameElement);
+          fileNameContainer.appendChild(fileIcon);
+          fileNameContainer.appendChild(fileNameElement);
           fileDetails.appendChild(fileOwnerElement);
           fileDetails.appendChild(fileLastModifiedElement);
           fileDetails.appendChild(fileSizeElement);
           fileActions.appendChild(deleteIcon);
           downloadLink.appendChild(downloadIcon);
           fileActions.appendChild(downloadLink);
-          fileItem.appendChild(showFileName);
+          fileItem.appendChild(fileNameContainer);
           fileItem.appendChild(fileDetails);
           fileItem.appendChild(fileActions);
           files.appendChild(fileItem);
@@ -157,6 +130,10 @@ function uploadFile() {
         if (!querySnapshot.empty) {
           // A file with the same name already exists for this user
           fileProgressElement.textContent = 'File "' + fileName + '" is already uploaded.';
+          // setTimeout(()=>{upload_box.style.display = "none";
+          // document.body.style.overflow = "auto";input.value = "";},2000)
+          // Display an info toast with no title
+          // toastr.info(`${fileName} is already uploaded.`)
         } else {
           // No file with the same name found, proceed with upload
           let fileRef = storageRef.child(fileName);
@@ -236,7 +213,6 @@ function deleteFile(fileID, fileName) {
     });
 }
 
-
 // Function to format date
 function formatDate(timestamp) {
   let date = new Date(timestamp);
@@ -265,10 +241,15 @@ function logoutUser() {
 }
 
 function printUserDetail(loginUser) {
+  let userBoxImg = document.querySelector(".user-info img");
+  let userImage = document.querySelector(".user-image");
   let loginUserEmail = document.querySelector(".email");
   loginUserEmail.append(loginUser.email);
   let loginUserName = document.querySelector(".hi-user");
   loginUserName.textContent = loginUser.displayName;
+  let userAvatar = loginUser.photoURL;
+  userBoxImg.src = userAvatar;
+  userImage.src = userAvatar;
 }
 
 // Select the button area by its class
@@ -278,10 +259,12 @@ let buttonArea = document.querySelector(".button-area");
 buttonArea.addEventListener("dragover", function (e) {
   e.preventDefault(); // Prevent the default behavior (open as link for some elements)
   buttonArea.classList.add("drag-over"); // Add a visual indication that files can be dropped
+  buttonArea.style.border = "10px solid orange";
 });
 
 buttonArea.addEventListener("dragleave", function () {
   buttonArea.classList.remove("drag-over"); // Remove the visual indication when leaving the area
+  // buttonArea.style.border="none";
 });
 
 buttonArea.addEventListener("drop", function (e) {
@@ -318,3 +301,14 @@ function handleFileSelection() {
 
 // Add an event listener to the input for file selection
 input.addEventListener("change", handleFileSelection);
+
+
+function showAndHideUserBox() {
+  let userBox = document.querySelector(".user-info");
+  userBox.classList.toggle("hide-show")
+}
+
+function hideUserBox() {
+  let userBox = document.querySelector(".user-info");
+  userBox.classList.toggle("hide-show")
+}

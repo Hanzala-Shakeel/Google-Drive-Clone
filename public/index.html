@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="button-area">
@@ -24,9 +25,9 @@
         <input type="text" placeholder="Search in Drive" />
       </div>
       <div class="icons-div">
-        <img src="assets/question.png" alt="" />
-        <img src="assets/settings.png" alt="" />
-        <img src="assets/9-dots.svg" alt="" />
+        <img class="icon" src="assets/question.png" alt="" />
+        <img class="icon" src="assets/settings.png" alt="" />
+        <img class="icon" src="assets/9-dots.svg" alt="" />
         <img
           onclick="showAndHideUserBox()"
           class="user-image"
@@ -43,8 +44,8 @@
         <p>My Drive <i class="fa-solid fa-chevron-down"></i></p>
       </div>
       <div class="section2">
-        <img src="assets/6-dots.png" alt="" />
-        <img src="assets/information.png" alt="" />
+        <img class="icon" src="assets/6-dots.png" alt="" />
+        <img class="icon" src="assets/information.png" alt="" />
       </div>
     </div>
     <div class="files-parent">
@@ -62,7 +63,8 @@
         <div class="file-item">
           <div class="file-name">
             <img src="assets/file.png" alt="" />
-            <p>Accounts</p>
+            <!-- <p>Accounts</p> -->
+            <p>Assassins Creed Origin</p>
           </div>
           <div class="file-details">
             <p>me</p>
@@ -90,6 +92,7 @@
 
     <div class="upload">
       <div class="filename">
+        <!-- <i class="fa-solid fa-xmark"></i> -->
         <h3>Selected File</h3>
         <div class="file-names"></div>
         <button onclick="uploadFile()">Upload</button>
@@ -100,6 +103,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="firebase-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

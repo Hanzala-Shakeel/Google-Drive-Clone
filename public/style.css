@@ -5,13 +5,17 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   color: #444444;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 html {
   position: relative;
 }
-body{
+body {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 /* =====================================Header======================================== */
 .header {
@@ -224,7 +228,6 @@ body{
 .hide-show {
   display: flex;
 }
-
 /* ===================================== upload======================================= */
 
 .upload {
@@ -259,7 +262,7 @@ body{
   font-size: 22px;
 }
 
-.upload .filename p{
+.upload .filename p {
   margin: 15px 0;
 }
 .upload .filename button {
@@ -271,4 +274,89 @@ body{
   font-size: 20px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+.hide{
+  display: block;
+}
+
+/* myphone width 360px */
+
+@media screen and (max-width: 512px) {
+  .logo img {
+    width: 40px;
+  }
+  .logo p {
+    font-size: 20px;
+  }
+  .search img {
+    width: 20px;
+  }
+  .icon {
+    display: none;
+  }
+  .search {
+    width: 70%;
+    margin-left: 20px;
+  }
+  .search input {
+    font-size: 15px;
+  }
+  .search input::placeholder {
+    font-size: 15px;
+  }
+  .user-image {
+    position: absolute;
+    right: 20px;
+  }
+  .header2 {
+    margin-top: 20px;
+  }
+  .header2 .section1 {
+    gap: 25px;
+  }
+  .header2 .section1 button {
+    width: 80px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+  .header2 .section1 p {
+    font-size: 15px;
+  }
+  .header2 .section1 p i {
+    font-size: 13px;
+  }
+  .header2 .section1 input {
+    width: 23%;
+    height: 8%;
+  }
+  .files-parent{
+    margin-top: 20px;
+  }
+  .files{
+    width: 90vw;
+    font-size: 12px;
+  }
+  .file-item{
+    padding: 3vw 0;
+  }
+  .file-name{
+    width: 46%;
+  }
+  .file-name p i{
+    font-size: 12px;
+  }
+  .file-details{
+    width: 43%;
+  }
+  .file-actions {
+    gap: 8px;
+  }
+  .file-actions i{
+    font-size: 12px ;
+  }
+  .hide{
+    display: none;
+  }
 }
