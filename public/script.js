@@ -259,18 +259,18 @@ let buttonArea = document.querySelector(".button-area");
 buttonArea.addEventListener("dragover", function (e) {
   e.preventDefault(); // Prevent the default behavior (open as link for some elements)
   buttonArea.classList.add("drag-over"); // Add a visual indication that files can be dropped
-  buttonArea.style.border = "10px solid orange";
+  buttonArea.style.border = "2px solid #3f89fa";
 });
 
 buttonArea.addEventListener("dragleave", function () {
   buttonArea.classList.remove("drag-over"); // Remove the visual indication when leaving the area
-  // buttonArea.style.border="none";
+  buttonArea.style.border = "none";
 });
 
 buttonArea.addEventListener("drop", function (e) {
   e.preventDefault(); // Prevent the default behavior (open as link for some elements)
   buttonArea.classList.remove("drag-over"); // Remove the visual indication
-
+  buttonArea.style.border = "none";
   // Access the dropped files
   let droppedFiles = e.dataTransfer.files;
 
