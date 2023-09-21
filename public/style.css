@@ -271,6 +271,7 @@ body {
   border-radius: 5px;
   text-align: center;
   justify-content: center;
+  padding: 23px;
 }
 
 .upload .filename h3 {
@@ -279,6 +280,13 @@ body {
 
 .upload .filename p {
   margin: 15px 0;
+}
+.upload .filename .file-names{
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .upload .filename button {
   background-color: #f39c12;
