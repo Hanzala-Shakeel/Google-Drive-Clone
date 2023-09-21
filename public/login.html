@@ -3,44 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sign in to Drive</title>
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <button id="googleSignInBtn">Google Sign In</button>
+    <!-- <button id="googleSignInBtn">Google Sign In</button> -->
+    <div class="container">
+      <div class="row1">
+        <div class="left">Google Drive</div>
+        <div class="right">
+          <div>meet drive</div>
+          <div>using drive</div>
+          <div>play drive</div>
+          <div>eat drive</div>
+        </div>
+      </div>
+
+      <div class="row2">
+        <img
+          src="https://www.google.com/drive/static/images/drive/logo-drive.png"
+        />
+        <div>A safe place for all your files</div>
+        <button id="googleSignInBtn">Sign in to Drive</button>
+      </div>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    <script src="firebase-init.js"></script>
-    <script>
-      const auth = firebase.auth();
-      window.addEventListener("load", () => {
-        auth.onAuthStateChanged((user) => {
-          if (user) {
-            window.location.href = "index.html";
-          } else {
-            console.log("user is not login");
-          }
-        });
-      });
-
-      const googleSignInBtn = document.getElementById("googleSignInBtn");
-
-      googleSignInBtn.addEventListener("click", () => {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        firebase
-          .auth()
-          .signInWithPopup(provider)
-          .then((result) => {
-            // Successful login
-            const user = result.user;
-            window.location.href = "index.html";
-          })
-          .catch((error) => {
-            // Handle errors
-            console.error(error);
-          });
-      });
-    </script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
