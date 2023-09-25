@@ -365,13 +365,13 @@ body {
     padding: 3vw 0;
   }
   .file-name {
-    width: 46%;
+    width: 60%;
   }
   .file-name p i {
     font-size: 12px;
   }
   .file-details {
-    width: 43%;
+    width: 30%;
   }
   .file-actions {
     gap: 8px;

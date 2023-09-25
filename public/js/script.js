@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
       printUserDetail(loginUser);
     } else {
       console.log("user is not login");
-      window.location.href="login.html";
+      window.location.href = "login.html";
     }
   });
 });
@@ -77,6 +77,8 @@ filesCollection.onSnapshot(function (snapshot) {
           });
           downloadIcon.setAttribute("class", "fa-solid fa-download");
           downloadLink.href = downloadURL;
+          fileOwnerElement.setAttribute("class", "hide");
+          fileLastModifiedElement.setAttribute("class", "hide");
 
           fileNameElement.textContent = fileName;
           fileOwnerElement.textContent = "me";
