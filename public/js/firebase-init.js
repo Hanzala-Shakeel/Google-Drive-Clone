@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBOZTi5iDFJSI1PcwuXJQi5lW-h2c5B2Os",
-    authDomain: "drive-clone-c908d.firebaseapp.com",
-    projectId: "drive-clone-c908d",
-    storageBucket: "drive-clone-c908d.appspot.com",
-    messagingSenderId: "1032525455736",
-    appId: "1:1032525455736:web:acc0e816d486c3ce0c288d"
+    apiKey: "AIzaSyDzJ1DbKXCOe8rZJSB7y2XflS6GIbQAN_E",
+    authDomain: "my-drive-5eabd-4112f.firebaseapp.com",
+    projectId: "my-drive-5eabd",
+    storageBucket: "my-drive-5eabd.appspot.com",
+    messagingSenderId: "415937145166",
+    appId: "1:415937145166:web:7415eb641d410bc954961f"
 };
 
 // Initialize Firebase
